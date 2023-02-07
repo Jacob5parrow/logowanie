@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">logowanie</string>
+    <string name="sprawd">Sprawdź</string>
+    <string name="cyfra">cyfra</string>
+    <string name="znak_specialny">znak specialny</string>
+    <string name="ma_a_litera">mała litera</string>
+    <string name="wielka_litera">wielka litera</string>
+    <string name="zgodno">zgodność</string>
     <string name="potwierd_has_o">potwierdź hasło</string>
     <string name="podaj_has_o">podaj hasło</string>
-    <string name="sprawd">Sprawdź</string>
+    <string name="liczna_znak_w_wi_ksza_ni_8">liczna znaków (większa niż 8)</string>
 </resources>
