@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.upperLetter).setTextColor(Color.BLACK)
             findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.BLACK)
             findViewById<TextView>(R.id.number).setTextColor(Color.BLACK)
-            findViewById<TextView>(R.id.special).setTextColor(Color.GREEN)
+            findViewById<TextView>(R.id.special).setTextColor(Color.BLACK)
 
 
             if (password1.text.toString().isEmpty())
@@ -43,28 +43,26 @@ class MainActivity : AppCompatActivity() {
             else
             {
 
-                if (password1 == password2)
+                if (password1.text.toString() == password2.text.toString())
                 {
                     findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
-                    password = password1.toString()
+                    password = password1.text.toString()
                 }
-                if (password1 != password2)
+                if (password1.text.toString() != password2.text.toString())
                 {
                     findViewById<TextView>(R.id.check).setTextColor(Color.RED)
-                    password = password1.toString()
-
                 }
 
                 val wielka_litera = Regex(".*[A-Z].*")
 
-                if (password.matches(wielka_litera))
+                if (password.any{it.isUpperCase()})
                 {
                     findViewById<TextView>(R.id.upperLetter).setTextColor(Color.GREEN)
                 }
 
                 val mala_litera = Regex(".*[a-z].*")
 
-                if (password.matches(mala_litera))
+                if (password.any{it.isLowerCase()})
                 {
                     findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.GREEN)
                 }
