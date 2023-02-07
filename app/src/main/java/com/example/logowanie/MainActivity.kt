@@ -55,26 +55,27 @@ class MainActivity : AppCompatActivity() {
 
                 if (password.any{it.isUpperCase()})
                 {
-                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.upperLetter).setTextColor(Color.GREEN)
                 }
 
 
                 if (password.any{it.isLowerCase()})
                 {
-                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.GREEN)
                 }
 
                 if (password.any{it.isDigit()})
                 {
-                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.number).setTextColor(Color.GREEN)
                 }
 
                 val specialChars = "!@#$%^&*()_+-=?"
 
                 if (password.any { specialChars.contains(it) })
                 {
-                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.special).setTextColor(Color.GREEN)
                 }
+
 
 
 
