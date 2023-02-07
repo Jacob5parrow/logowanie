@@ -22,11 +22,11 @@ class MainActivity : AppCompatActivity() {
             findViewById<EditText>(R.id.password1).hint = ""
             findViewById<EditText>(R.id.password2).hint = ""
 
-            findViewById<TextView>(R.id.check).setTextColor(Color.BLACK)
-            findViewById<TextView>(R.id.upperLetter).setTextColor(Color.BLACK)
-            findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.BLACK)
-            findViewById<TextView>(R.id.number).setTextColor(Color.BLACK)
-            findViewById<TextView>(R.id.special).setTextColor(Color.BLACK)
+            findViewById<TextView>(R.id.check).setTextColor(Color.WHITE)
+            findViewById<TextView>(R.id.upperLetter).setTextColor(Color.WHITE)
+            findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.WHITE)
+            findViewById<TextView>(R.id.number).setTextColor(Color.WHITE)
+            findViewById<TextView>(R.id.special).setTextColor(Color.WHITE)
 
 
             if (password1.text.toString().isEmpty())
@@ -53,32 +53,27 @@ class MainActivity : AppCompatActivity() {
                     findViewById<TextView>(R.id.check).setTextColor(Color.RED)
                 }
 
-                val wielka_litera = Regex(".*[A-Z].*")
-
                 if (password.any{it.isUpperCase()})
                 {
-                    findViewById<TextView>(R.id.upperLetter).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
                 }
 
-                val mala_litera = Regex(".*[a-z].*")
 
                 if (password.any{it.isLowerCase()})
                 {
-                    findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
                 }
 
-                val liczba = Regex(".*[0-9].*")
-
-                if (password.matches(liczba))
+                if (password.any{it.isDigit()})
                 {
-                    findViewById<TextView>(R.id.number).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
                 }
 
                 val specialChars = "!@#$%^&*()_+-=?"
 
                 if (password.any { specialChars.contains(it) })
                 {
-                    findViewById<TextView>(R.id.special).setTextColor(Color.GREEN)
+                    findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
                 }
 
 
