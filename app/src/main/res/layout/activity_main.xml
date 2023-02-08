@@ -62,10 +62,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password1"
-            android:hint="@string/podaj_has_o"
             android:layout_width="300dp"
             android:layout_height="100dp"
+            android:backgroundTint="#C6C6C6"
+            android:fontFamily="monospace"
 
+            android:hint="@string/podaj_has_o"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 

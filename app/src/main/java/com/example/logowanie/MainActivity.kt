@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.submit).setOnClickListener {
             val password1 = findViewById<EditText>(R.id.password1)
             val password2 = findViewById<EditText>(R.id.password2)
-            var password = ""
+            val password: String
 
             findViewById<EditText>(R.id.password1).hint = ""
             findViewById<EditText>(R.id.password2).hint = ""
@@ -27,7 +27,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.WHITE)
             findViewById<TextView>(R.id.number).setTextColor(Color.WHITE)
             findViewById<TextView>(R.id.special).setTextColor(Color.WHITE)
-
 
             if (password1.text.toString().isEmpty())
             {
@@ -47,40 +46,55 @@ class MainActivity : AppCompatActivity() {
                 {
                     findViewById<TextView>(R.id.check).setTextColor(Color.GREEN)
                     password = password1.text.toString()
+
+                    if (password.any{it.isUpperCase()})
+                    {
+                        findViewById<TextView>(R.id.upperLetter).setTextColor(Color.GREEN)
+                    }
+
+                    if (!password.any{it.isUpperCase()})
+                    {
+                        findViewById<TextView>(R.id.upperLetter).setTextColor(Color.RED)
+                    }
+
+                    if (password.any{it.isLowerCase()})
+                    {
+                        findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.GREEN)
+                    }
+
+                    if (!password.any{it.isLowerCase()})
+                    {
+                        findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.RED)
+                    }
+
+                    if (password.any{it.isDigit()})
+                    {
+                        findViewById<TextView>(R.id.number).setTextColor(Color.GREEN)
+                    }
+
+                    if (!password.any{it.isDigit()})
+                    {
+                        findViewById<TextView>(R.id.number).setTextColor(Color.RED)
+                    }
+
+                    val specialChars = "!@#$%^&*()_+-=?"
+
+                    if (password.any { specialChars.contains(it) })
+                    {
+                        findViewById<TextView>(R.id.special).setTextColor(Color.GREEN)
+                    }
+
+                    if (!password.any { specialChars.contains(it) })
+                    {
+                        findViewById<TextView>(R.id.special).setTextColor(Color.RED)
+                    }
                 }
                 if (password1.text.toString() != password2.text.toString())
                 {
                     findViewById<TextView>(R.id.check).setTextColor(Color.RED)
                 }
 
-                if (password.any{it.isUpperCase()})
-                {
-                    findViewById<TextView>(R.id.upperLetter).setTextColor(Color.GREEN)
-                }
-
-
-                if (password.any{it.isLowerCase()})
-                {
-                    findViewById<TextView>(R.id.lowerLetter).setTextColor(Color.GREEN)
-                }
-
-                if (password.any{it.isDigit()})
-                {
-                    findViewById<TextView>(R.id.number).setTextColor(Color.GREEN)
-                }
-
-                val specialChars = "!@#$%^&*()_+-=?"
-
-                if (password.any { specialChars.contains(it) })
-                {
-                    findViewById<TextView>(R.id.special).setTextColor(Color.GREEN)
-                }
-
-
-
-
-
-
+               
 
             }
 
